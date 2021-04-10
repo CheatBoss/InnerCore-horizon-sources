@@ -1,0 +1,40 @@
+package android.support.v4.app;
+
+import android.content.*;
+import android.os.*;
+import android.app.*;
+
+class RemoteInputCompatApi20
+{
+    static void addResultsToIntent(final RemoteInputCompatBase.RemoteInput[] array, final Intent intent, final Bundle bundle) {
+        RemoteInput.addResultsToIntent(fromCompat(array), intent, bundle);
+    }
+    
+    static RemoteInput[] fromCompat(final RemoteInputCompatBase.RemoteInput[] array) {
+        if (array == null) {
+            return null;
+        }
+        final RemoteInput[] array2 = new RemoteInput[array.length];
+        for (int i = 0; i < array.length; ++i) {
+            final RemoteInputCompatBase.RemoteInput remoteInput = array[i];
+            array2[i] = new RemoteInput$Builder(remoteInput.getResultKey()).setLabel(remoteInput.getLabel()).setChoices(remoteInput.getChoices()).setAllowFreeFormInput(remoteInput.getAllowFreeFormInput()).addExtras(remoteInput.getExtras()).build();
+        }
+        return array2;
+    }
+    
+    static Bundle getResultsFromIntent(final Intent intent) {
+        return RemoteInput.getResultsFromIntent(intent);
+    }
+    
+    static RemoteInputCompatBase.RemoteInput[] toCompat(final RemoteInput[] array, final RemoteInputCompatBase.Factory factory) {
+        if (array == null) {
+            return null;
+        }
+        final RemoteInputCompatBase.RemoteInput[] array2 = factory.newArray(array.length);
+        for (int i = 0; i < array.length; ++i) {
+            final RemoteInput remoteInput = array[i];
+            array2[i] = factory.build(remoteInput.getResultKey(), remoteInput.getLabel(), remoteInput.getChoices(), remoteInput.getAllowFreeFormInput(), remoteInput.getExtras());
+        }
+        return array2;
+    }
+}

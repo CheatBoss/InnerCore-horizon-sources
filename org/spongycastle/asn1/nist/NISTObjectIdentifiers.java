@@ -1,0 +1,68 @@
+package org.spongycastle.asn1.nist;
+
+import org.spongycastle.asn1.*;
+
+public interface NISTObjectIdentifiers
+{
+    public static final ASN1ObjectIdentifier aes;
+    public static final ASN1ObjectIdentifier dsa_with_sha224 = (id_dsa_with_sha2 = (sigAlgs = NISTObjectIdentifiers.nistAlgorithm.branch("3"))).branch("1");
+    public static final ASN1ObjectIdentifier dsa_with_sha256 = NISTObjectIdentifiers.sigAlgs.branch("2");
+    public static final ASN1ObjectIdentifier dsa_with_sha384 = NISTObjectIdentifiers.sigAlgs.branch("3");
+    public static final ASN1ObjectIdentifier dsa_with_sha512 = NISTObjectIdentifiers.sigAlgs.branch("4");
+    public static final ASN1ObjectIdentifier hashAlgs;
+    public static final ASN1ObjectIdentifier id_aes128_CBC = NISTObjectIdentifiers.aes.branch("2");
+    public static final ASN1ObjectIdentifier id_aes128_CCM = NISTObjectIdentifiers.aes.branch("7");
+    public static final ASN1ObjectIdentifier id_aes128_CFB = NISTObjectIdentifiers.aes.branch("4");
+    public static final ASN1ObjectIdentifier id_aes128_ECB = (aes = NISTObjectIdentifiers.nistAlgorithm.branch("1")).branch("1");
+    public static final ASN1ObjectIdentifier id_aes128_GCM = NISTObjectIdentifiers.aes.branch("6");
+    public static final ASN1ObjectIdentifier id_aes128_OFB = NISTObjectIdentifiers.aes.branch("3");
+    public static final ASN1ObjectIdentifier id_aes128_wrap = NISTObjectIdentifiers.aes.branch("5");
+    public static final ASN1ObjectIdentifier id_aes128_wrap_pad = NISTObjectIdentifiers.aes.branch("8");
+    public static final ASN1ObjectIdentifier id_aes192_CBC = NISTObjectIdentifiers.aes.branch("22");
+    public static final ASN1ObjectIdentifier id_aes192_CCM = NISTObjectIdentifiers.aes.branch("27");
+    public static final ASN1ObjectIdentifier id_aes192_CFB = NISTObjectIdentifiers.aes.branch("24");
+    public static final ASN1ObjectIdentifier id_aes192_ECB = NISTObjectIdentifiers.aes.branch("21");
+    public static final ASN1ObjectIdentifier id_aes192_GCM = NISTObjectIdentifiers.aes.branch("26");
+    public static final ASN1ObjectIdentifier id_aes192_OFB = NISTObjectIdentifiers.aes.branch("23");
+    public static final ASN1ObjectIdentifier id_aes192_wrap = NISTObjectIdentifiers.aes.branch("25");
+    public static final ASN1ObjectIdentifier id_aes192_wrap_pad = NISTObjectIdentifiers.aes.branch("28");
+    public static final ASN1ObjectIdentifier id_aes256_CBC = NISTObjectIdentifiers.aes.branch("42");
+    public static final ASN1ObjectIdentifier id_aes256_CCM = NISTObjectIdentifiers.aes.branch("47");
+    public static final ASN1ObjectIdentifier id_aes256_CFB = NISTObjectIdentifiers.aes.branch("44");
+    public static final ASN1ObjectIdentifier id_aes256_ECB = NISTObjectIdentifiers.aes.branch("41");
+    public static final ASN1ObjectIdentifier id_aes256_GCM = NISTObjectIdentifiers.aes.branch("46");
+    public static final ASN1ObjectIdentifier id_aes256_OFB = NISTObjectIdentifiers.aes.branch("43");
+    public static final ASN1ObjectIdentifier id_aes256_wrap = NISTObjectIdentifiers.aes.branch("45");
+    public static final ASN1ObjectIdentifier id_aes256_wrap_pad = NISTObjectIdentifiers.aes.branch("48");
+    public static final ASN1ObjectIdentifier id_dsa_with_sha2;
+    public static final ASN1ObjectIdentifier id_dsa_with_sha3_224 = NISTObjectIdentifiers.sigAlgs.branch("5");
+    public static final ASN1ObjectIdentifier id_dsa_with_sha3_256 = NISTObjectIdentifiers.sigAlgs.branch("6");
+    public static final ASN1ObjectIdentifier id_dsa_with_sha3_384 = NISTObjectIdentifiers.sigAlgs.branch("7");
+    public static final ASN1ObjectIdentifier id_dsa_with_sha3_512 = NISTObjectIdentifiers.sigAlgs.branch("8");
+    public static final ASN1ObjectIdentifier id_ecdsa_with_sha3_224 = NISTObjectIdentifiers.sigAlgs.branch("9");
+    public static final ASN1ObjectIdentifier id_ecdsa_with_sha3_256 = NISTObjectIdentifiers.sigAlgs.branch("10");
+    public static final ASN1ObjectIdentifier id_ecdsa_with_sha3_384 = NISTObjectIdentifiers.sigAlgs.branch("11");
+    public static final ASN1ObjectIdentifier id_ecdsa_with_sha3_512 = NISTObjectIdentifiers.sigAlgs.branch("12");
+    public static final ASN1ObjectIdentifier id_hmacWithSHA3_224 = NISTObjectIdentifiers.hashAlgs.branch("13");
+    public static final ASN1ObjectIdentifier id_hmacWithSHA3_256 = NISTObjectIdentifiers.hashAlgs.branch("14");
+    public static final ASN1ObjectIdentifier id_hmacWithSHA3_384 = NISTObjectIdentifiers.hashAlgs.branch("15");
+    public static final ASN1ObjectIdentifier id_hmacWithSHA3_512 = NISTObjectIdentifiers.hashAlgs.branch("16");
+    public static final ASN1ObjectIdentifier id_rsassa_pkcs1_v1_5_with_sha3_224 = NISTObjectIdentifiers.sigAlgs.branch("13");
+    public static final ASN1ObjectIdentifier id_rsassa_pkcs1_v1_5_with_sha3_256 = NISTObjectIdentifiers.sigAlgs.branch("14");
+    public static final ASN1ObjectIdentifier id_rsassa_pkcs1_v1_5_with_sha3_384 = NISTObjectIdentifiers.sigAlgs.branch("15");
+    public static final ASN1ObjectIdentifier id_rsassa_pkcs1_v1_5_with_sha3_512 = NISTObjectIdentifiers.sigAlgs.branch("16");
+    public static final ASN1ObjectIdentifier id_sha224 = NISTObjectIdentifiers.hashAlgs.branch("4");
+    public static final ASN1ObjectIdentifier id_sha256 = (hashAlgs = (nistAlgorithm = new ASN1ObjectIdentifier("2.16.840.1.101.3.4")).branch("2")).branch("1");
+    public static final ASN1ObjectIdentifier id_sha384 = NISTObjectIdentifiers.hashAlgs.branch("2");
+    public static final ASN1ObjectIdentifier id_sha3_224 = NISTObjectIdentifiers.hashAlgs.branch("7");
+    public static final ASN1ObjectIdentifier id_sha3_256 = NISTObjectIdentifiers.hashAlgs.branch("8");
+    public static final ASN1ObjectIdentifier id_sha3_384 = NISTObjectIdentifiers.hashAlgs.branch("9");
+    public static final ASN1ObjectIdentifier id_sha3_512 = NISTObjectIdentifiers.hashAlgs.branch("10");
+    public static final ASN1ObjectIdentifier id_sha512 = NISTObjectIdentifiers.hashAlgs.branch("3");
+    public static final ASN1ObjectIdentifier id_sha512_224 = NISTObjectIdentifiers.hashAlgs.branch("5");
+    public static final ASN1ObjectIdentifier id_sha512_256 = NISTObjectIdentifiers.hashAlgs.branch("6");
+    public static final ASN1ObjectIdentifier id_shake128 = NISTObjectIdentifiers.hashAlgs.branch("11");
+    public static final ASN1ObjectIdentifier id_shake256 = NISTObjectIdentifiers.hashAlgs.branch("12");
+    public static final ASN1ObjectIdentifier nistAlgorithm;
+    public static final ASN1ObjectIdentifier sigAlgs;
+}
